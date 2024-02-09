@@ -22,8 +22,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
   Serial.println("Start");
-  buckets = (sizeof(rtcMem) / 4);
-  if (buckets == 0) buckets = 1;
+  buckets = (sizeof(rtcMem) + 3) / 4;
   Serial.print("Buckets ");
   Serial.println(buckets);
   system_rtc_mem_read(64, &toggleFlag, 4);
